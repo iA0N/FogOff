@@ -1,0 +1,17 @@
+[remap]
+
+importer="MagicaVoxel.With.Extensions.To.MeshLibrary"
+type="MeshLibrary"
+uid="uid://bkhjo8cn0nxm7"
+path="res://.godot/imported/torch.vox-7e827a746f03c526ad8a0447e40baca8.meshlib"
+
+[deps]
+
+source_file="res://assets/buildings/torch.vox"
+dest_files=["res://.godot/imported/torch.vox-7e827a746f03c526ad8a0447e40baca8.meshlib"]
+
+[params]
+
+Scale=0.1
+GreedyMeshGenerator=true
+SnapToGround=false
