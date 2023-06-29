@@ -1,0 +1,18 @@
+[gd_resource type="MeshLibrary" load_steps=3 format=3 uid="uid://berf0yb0pmcok"]
+
+[ext_resource type="ArrayMesh" uid="uid://cv3sat3ib2a8k" path="res://vox/ground_1.vox" id="1_ro34w"]
+[ext_resource type="ArrayMesh" uid="uid://br26diju14njk" path="res://skeleton.vox" id="2_1emw3"]
+
+[resource]
+item/0/name = "ground_1"
+item/0/mesh = ExtResource("1_ro34w")
+item/0/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/0/shapes = []
+item/0/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/0/navigation_layers = 1
+item/1/name = ""
+item/1/mesh = ExtResource("2_1emw3")
+item/1/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/1/shapes = []
+item/1/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/1/navigation_layers = 1
