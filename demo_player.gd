@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 # How fast the player moves in meters per second.
-@export var speed = 14
+@export var speed = 6
 # The downward acceleration when in the air, in meters per second squared.
 @export var fall_acceleration = 75
 
@@ -10,7 +10,8 @@ var target_velocity = Vector3.ZERO
 
 func _physics_process(delta):
 	var direction = Vector3.ZERO
-
+	var moving = false
+	speed = 6
 	if Input.is_action_pressed("D"):
 		direction.x += 1
 	if Input.is_action_pressed("A"):
@@ -20,6 +21,14 @@ func _physics_process(delta):
 	if Input.is_action_pressed("W"):
 		direction.z -= 1
 
+	if direction.x != 0 || direction.z != 0:
+		moving = true
+		
+	$ChrKnight.look_at(Vector3($ChrKnight.global_position.x - direction.x * 10, 0, $ChrKnight.global_position.z - direction.z * 10))
+
+
+	if direction.x != 0 && direction.z != 0:
+		speed = 4
 	# Ground Velocity
 	target_velocity.x = direction.x * speed
 	target_velocity.z = direction.z * speed
@@ -31,4 +40,10 @@ func _physics_process(delta):
 	# Moving the Character
 	velocity = target_velocity
 	move_and_slide()
-	self.position.y = 6
+	self.position.y = 0
+	
+	if moving:
+		$AnimationPlayer.play("jump")
+	else:
+		$AnimationPlayer.stop()
+		$ChrKnight.position.y = 0
