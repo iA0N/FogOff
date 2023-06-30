@@ -1,18 +1,17 @@
 [remap]
 
-importer="MagicaVoxel.With.Extensions.To.Mesh"
-type="Mesh"
+importer="MagicaVoxel.With.Extensions.To.MeshLibrary"
+type="MeshLibrary"
 uid="uid://15pq0y7jjo0g"
-path="res://.godot/imported/fire.vox-9947f92ea5e97814e51b43a62116e1fe.mesh"
+path="res://.godot/imported/fire.vox-9947f92ea5e97814e51b43a62116e1fe.meshlib"
 
 [deps]
 
 source_file="res://assets/terrain/fire.vox"
-dest_files=["res://.godot/imported/fire.vox-9947f92ea5e97814e51b43a62116e1fe.mesh"]
+dest_files=["res://.godot/imported/fire.vox-9947f92ea5e97814e51b43a62116e1fe.meshlib"]
 
 [params]
 
 Scale=0.1
 GreedyMeshGenerator=true
 SnapToGround=false
-FirstKeyframeOnly=true

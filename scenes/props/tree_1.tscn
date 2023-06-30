@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxksmasqbt2t7"]
+
+[ext_resource type="ArrayMesh" uid="uid://bspaaavfks6hk" path="res://assets/terrain/tree.vox" id="1_2p4bx"]
+
+[node name="tree_1" type="Node3D"]
+
+[node name="Tree" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.2, 0.2)
+mesh = ExtResource("1_2p4bx")
