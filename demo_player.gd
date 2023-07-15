@@ -23,8 +23,11 @@ func _physics_process(delta):
 
 	if direction.x != 0 || direction.z != 0:
 		moving = true
-		
-	$ChrKnight.look_at(Vector3($ChrKnight.global_position.x - direction.x * 10, 0, $ChrKnight.global_position.z - direction.z * 10))
+	
+	$Marker3D.position = $ChrKnight.position
+	$Marker3D.position.x += 0.01
+	if (direction.x != 0 || direction.z != 0):
+		$ChrKnight.look_at(Vector3($Marker3D.global_position.x - direction.x * 10, 0, $Marker3D.global_position.z - direction.z * 10))
 
 
 	if direction.x != 0 && direction.z != 0:

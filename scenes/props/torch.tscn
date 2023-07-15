@@ -29,10 +29,14 @@ mesh = SubResource("ArrayMesh_ghgwk")
 script = ExtResource("1_25tio")
 frames = ExtResource("2_atdqx")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.19209e-07, 2.8, 0)
+[node name="fire" parent="." instance=ExtResource("4_u5umk")]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.5, -1.5299e-07)
 light_color = Color(0.792157, 0.607843, 0, 1)
 light_energy = 2.0
 shadow_enabled = true
-
-[node name="fire" parent="." instance=ExtResource("4_u5umk")]
+distance_fade_enabled = true
+distance_fade_shadow = 40.0
+spot_range = 8.0
+spot_angle = 80.0

@@ -1,17 +1,18 @@
 [remap]
 
-importer="MagicaVoxel.With.Extensions.To.MeshLibrary"
-type="MeshLibrary"
-uid="uid://fipyylchgikm"
-path="res://.godot/imported/flora.vox-b6172d0b683a879d9d7ea28f99cbdd72.meshlib"
+importer="MagicaVoxel.With.Extensions.To.Mesh"
+type="Mesh"
+uid="uid://bg31oc5tont70"
+path="res://.godot/imported/flora.vox-b6172d0b683a879d9d7ea28f99cbdd72.mesh"
 
 [deps]
 
 source_file="res://assets/terrain/flora.vox"
-dest_files=["res://.godot/imported/flora.vox-b6172d0b683a879d9d7ea28f99cbdd72.meshlib"]
+dest_files=["res://.godot/imported/flora.vox-b6172d0b683a879d9d7ea28f99cbdd72.mesh"]
 
 [params]
 
 Scale=0.1
 GreedyMeshGenerator=true
 SnapToGround=false
+FirstKeyframeOnly=true

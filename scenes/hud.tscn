@@ -27,4 +27,4 @@ text = "FPS: "
 
 [node name="Label4" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "Toggle lightning: T (ON)"
+text = "Toggle SSIL: T (ON)"

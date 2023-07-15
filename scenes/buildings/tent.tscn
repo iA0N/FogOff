@@ -32,13 +32,14 @@ frames = ExtResource("2_dq4rv")
 [node name="fire" parent="." instance=ExtResource("3_jme17")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -3.4, 2.1)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0.6, 1.8)
-light_color = Color(1, 0.415686, 0.211765, 1)
-light_energy = 8.0
-light_volumetric_fog_energy = 2.0
-shadow_enabled = true
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 1.3, 0)
 shape = SubResource("BoxShape3D_0ynox")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3, 1.9)
+light_color = Color(0.792157, 0.607843, 0, 1)
+light_energy = 4.0
+shadow_enabled = true
+spot_range = 8.0
+spot_angle = 80.0

@@ -3,7 +3,7 @@ extends Node3D
 var better_lightning = true
 var iso = false
 @onready var env = $WorldEnvironment.environment
-
+var target = null;
 func _ready():
 	print("test")
 	# ssil
@@ -17,13 +17,13 @@ func _process(delta):
 		if better_lightning == true:
 			better_lightning = !better_lightning
 			$WorldEnvironment.environment.set_ssil_enabled(better_lightning)
-			$WorldEnvironment.environment.set_sdfgi_enabled(better_lightning)
-			$Control/VBoxContainer/Label4.text = "Toggle Lightning: T (OFF)"
+			#$WorldEnvironment.environment.set_sdfgi_enabled(better_lightning)
+			$Control/VBoxContainer/Label4.text = "Toggle SSIL: T (OFF)"
 		else:
 			better_lightning = !better_lightning
 			$WorldEnvironment.environment.set_ssil_enabled(better_lightning)
-			$WorldEnvironment.environment.set_sdfgi_enabled(better_lightning)
-			$Control/VBoxContainer/Label4.text = "Toggle Lightning: T (ON)"
+			#$WorldEnvironment.environment.set_sdfgi_enabled(better_lightning)
+			$Control/VBoxContainer/Label4.text = "Toggle SSIL: T (ON)"
 
 	if Input.is_action_just_released("Q"):
 		if !iso:
@@ -34,4 +34,3 @@ func _process(delta):
 			$demo_player/Camera3D.current = true
 			$demo_player/Camera3D_ISO.current = false
 			iso = !iso
-			
