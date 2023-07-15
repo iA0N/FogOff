@@ -1,17 +1,18 @@
 [remap]
 
-importer="MagicaVoxel.With.Extensions.To.MeshLibrary"
-type="MeshLibrary"
-uid="uid://cvl32vgjo1m4j"
-path="res://.godot/imported/camp.vox-895d5f7cfc8d82ea172db9543b979fe5.meshlib"
+importer="MagicaVoxel.With.Extensions.To.Mesh"
+type="Mesh"
+uid="uid://cvdhwt6lengy4"
+path="res://.godot/imported/camp.vox-895d5f7cfc8d82ea172db9543b979fe5.mesh"
 
 [deps]
 
 source_file="res://assets/buildings/camp.vox"
-dest_files=["res://.godot/imported/camp.vox-895d5f7cfc8d82ea172db9543b979fe5.meshlib"]
+dest_files=["res://.godot/imported/camp.vox-895d5f7cfc8d82ea172db9543b979fe5.mesh"]
 
 [params]
 
 Scale=0.1
 GreedyMeshGenerator=true
 SnapToGround=false
+FirstKeyframeOnly=true
