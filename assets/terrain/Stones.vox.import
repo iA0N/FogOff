@@ -1,17 +1,18 @@
 [remap]
 
-importer="MagicaVoxel.With.Extensions.To.MeshLibrary"
-type="MeshLibrary"
-uid="uid://bfsxvirwjdupo"
-path="res://.godot/imported/Stones.vox-89a6683691eba459953a36f2097a1639.meshlib"
+importer="MagicaVoxel.With.Extensions.To.Mesh"
+type="Mesh"
+uid="uid://bchyeiq8ittf"
+path="res://.godot/imported/Stones.vox-89a6683691eba459953a36f2097a1639.mesh"
 
 [deps]
 
 source_file="res://assets/terrain/Stones.vox"
-dest_files=["res://.godot/imported/Stones.vox-89a6683691eba459953a36f2097a1639.meshlib"]
+dest_files=["res://.godot/imported/Stones.vox-89a6683691eba459953a36f2097a1639.mesh"]
 
 [params]
 
 Scale=0.1
 GreedyMeshGenerator=true
 SnapToGround=false
+FirstKeyframeOnly=true
