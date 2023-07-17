@@ -59,3 +59,8 @@ frames = ExtResource("2_mecsv")
 
 [node name="torch" parent="." instance=ExtResource("4_mj6lq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2, 0)
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.9, 0.3)
+text = "xxDragonSlayerxx"
+font_size = 50
