@@ -1,0 +1,17 @@
+[remap]
+
+importer="MagicaVoxel.With.Extensions.To.MeshLibrary"
+type="MeshLibrary"
+uid="uid://cabokhabhujrs"
+path="res://.godot/imported/grass_tile_16.vox-2f2273a4fd2ee1fc4afdd78f8cd35ec6.meshlib"
+
+[deps]
+
+source_file="res://assets/terrain/grass_tile_16.vox"
+dest_files=["res://.godot/imported/grass_tile_16.vox-2f2273a4fd2ee1fc4afdd78f8cd35ec6.meshlib"]
+
+[params]
+
+Scale=0.1
+GreedyMeshGenerator=true
+SnapToGround=false

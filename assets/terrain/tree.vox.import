@@ -1,18 +1,17 @@
 [remap]
 
-importer="MagicaVoxel.With.Extensions.To.Mesh"
-type="Mesh"
-uid="uid://bf375y4g34jx4"
-path="res://.godot/imported/tree.vox-0898494594187da47a0ae2c4f53ada71.mesh"
+importer="MagicaVoxel.With.Extensions.To.MeshLibrary"
+type="MeshLibrary"
+uid="uid://b2rbxw5ema0ls"
+path="res://.godot/imported/tree.vox-0898494594187da47a0ae2c4f53ada71.meshlib"
 
 [deps]
 
 source_file="res://assets/terrain/tree.vox"
-dest_files=["res://.godot/imported/tree.vox-0898494594187da47a0ae2c4f53ada71.mesh"]
+dest_files=["res://.godot/imported/tree.vox-0898494594187da47a0ae2c4f53ada71.meshlib"]
 
 [params]
 
 Scale=0.1
 GreedyMeshGenerator=true
 SnapToGround=false
-FirstKeyframeOnly=true

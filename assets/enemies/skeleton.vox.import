@@ -1,0 +1,17 @@
+[remap]
+
+importer="MagicaVoxel.With.Extensions.To.MeshLibrary"
+type="MeshLibrary"
+uid="uid://dnqqgr6bi825s"
+path="res://.godot/imported/skeleton.vox-227c1d32cc3f66069d50dfd73f3dc554.meshlib"
+
+[deps]
+
+source_file="res://assets/enemies/skeleton.vox"
+dest_files=["res://.godot/imported/skeleton.vox-227c1d32cc3f66069d50dfd73f3dc554.meshlib"]
+
+[params]
+
+Scale=0.1
+GreedyMeshGenerator=true
+SnapToGround=false

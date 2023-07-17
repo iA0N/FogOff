@@ -1,0 +1,17 @@
+[remap]
+
+importer="MagicaVoxel.With.Extensions.To.MeshLibrary"
+type="MeshLibrary"
+uid="uid://b0b8q2ng18bmw"
+path="res://.godot/imported/big tree.vox-58138b0bcfab62dda16fbf2df556d4e3.meshlib"
+
+[deps]
+
+source_file="res://assets/terrain/big tree.vox"
+dest_files=["res://.godot/imported/big tree.vox-58138b0bcfab62dda16fbf2df556d4e3.meshlib"]
+
+[params]
+
+Scale=0.1
+GreedyMeshGenerator=true
+SnapToGround=false

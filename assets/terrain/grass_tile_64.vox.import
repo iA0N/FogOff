@@ -1,0 +1,17 @@
+[remap]
+
+importer="MagicaVoxel.With.Extensions.To.MeshLibrary"
+type="MeshLibrary"
+uid="uid://djebeswslc405"
+path="res://.godot/imported/grass_tile_64.vox-75d5d40ea6e76d74f70c2cadb83f761d.meshlib"
+
+[deps]
+
+source_file="res://assets/terrain/grass_tile_64.vox"
+dest_files=["res://.godot/imported/grass_tile_64.vox-75d5d40ea6e76d74f70c2cadb83f761d.meshlib"]
+
+[params]
+
+Scale=0.1
+GreedyMeshGenerator=true
+SnapToGround=false

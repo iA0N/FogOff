@@ -1,18 +1,17 @@
 [remap]
 
-importer="MagicaVoxel.With.Extensions.To.Mesh"
-type="Mesh"
-uid="uid://bmw663dcs5j1g"
-path="res://.godot/imported/base figure.vox-4ab3b2f50ae751d26be32c9d5ff1b6e6.mesh"
+importer="MagicaVoxel.With.Extensions.To.MeshLibrary"
+type="MeshLibrary"
+uid="uid://bq3680fq72t32"
+path="res://.godot/imported/base figure.vox-4ab3b2f50ae751d26be32c9d5ff1b6e6.meshlib"
 
 [deps]
 
 source_file="res://assets/units/base figure.vox"
-dest_files=["res://.godot/imported/base figure.vox-4ab3b2f50ae751d26be32c9d5ff1b6e6.mesh"]
+dest_files=["res://.godot/imported/base figure.vox-4ab3b2f50ae751d26be32c9d5ff1b6e6.meshlib"]
 
 [params]
 
 Scale=0.1
 GreedyMeshGenerator=true
 SnapToGround=false
-FirstKeyframeOnly=true

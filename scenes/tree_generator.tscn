@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0wq21guu3sww"]
+
+[ext_resource type="Script" path="res://scenes/tree_generator.gd" id="1_a50mv"]
+
+[node name="Tree_Generator" type="Node3D"]
+script = ExtResource("1_a50mv")

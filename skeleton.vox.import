@@ -1,18 +1,17 @@
 [remap]
 
-importer="MagicaVoxel.With.Extensions.To.Mesh"
-type="Mesh"
+importer="MagicaVoxel.With.Extensions.To.MeshLibrary"
+type="MeshLibrary"
 uid="uid://br26diju14njk"
-path="res://.godot/imported/skeleton.vox-188f754d3f6362be65c65a935a56ba40.mesh"
+path="res://.godot/imported/skeleton.vox-188f754d3f6362be65c65a935a56ba40.meshlib"
 
 [deps]
 
 source_file="res://skeleton.vox"
-dest_files=["res://.godot/imported/skeleton.vox-188f754d3f6362be65c65a935a56ba40.mesh"]
+dest_files=["res://.godot/imported/skeleton.vox-188f754d3f6362be65c65a935a56ba40.meshlib"]
 
 [params]
 
 Scale=0.1
 GreedyMeshGenerator=true
 SnapToGround=false
-FirstKeyframeOnly=true

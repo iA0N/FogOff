@@ -1,18 +1,17 @@
 [remap]
 
-importer="MagicaVoxel.With.Extensions.To.Mesh"
-type="Mesh"
-uid="uid://mwb7fu4f7cfm"
-path="res://.godot/imported/blacksmith.vox-731222ec800e04584f46c7761a9a69a0.mesh"
+importer="MagicaVoxel.With.Extensions.To.MeshLibrary"
+type="MeshLibrary"
+uid="uid://cfdnq1l8fmt0g"
+path="res://.godot/imported/blacksmith.vox-731222ec800e04584f46c7761a9a69a0.meshlib"
 
 [deps]
 
 source_file="res://assets/buildings/blacksmith.vox"
-dest_files=["res://.godot/imported/blacksmith.vox-731222ec800e04584f46c7761a9a69a0.mesh"]
+dest_files=["res://.godot/imported/blacksmith.vox-731222ec800e04584f46c7761a9a69a0.meshlib"]
 
 [params]
 
 Scale=0.1
 GreedyMeshGenerator=true
 SnapToGround=false
-FirstKeyframeOnly=true

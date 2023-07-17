@@ -1,18 +1,17 @@
 [remap]
 
-importer="MagicaVoxel.With.Extensions.To.Mesh"
-type="Mesh"
+importer="MagicaVoxel.With.Extensions.To.MeshLibrary"
+type="MeshLibrary"
 uid="uid://j2b2eecsaq5m"
-path="res://.godot/imported/plant_1.vox-34d59c2f528eb7e77291973f1dcc895a.mesh"
+path="res://.godot/imported/plant_1.vox-34d59c2f528eb7e77291973f1dcc895a.meshlib"
 
 [deps]
 
 source_file="res://vox/plant_1.vox"
-dest_files=["res://.godot/imported/plant_1.vox-34d59c2f528eb7e77291973f1dcc895a.mesh"]
+dest_files=["res://.godot/imported/plant_1.vox-34d59c2f528eb7e77291973f1dcc895a.meshlib"]
 
 [params]
 
 Scale=0.1
 GreedyMeshGenerator=true
 SnapToGround=false
-FirstKeyframeOnly=true

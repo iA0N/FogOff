@@ -1,18 +1,17 @@
 [remap]
 
-importer="MagicaVoxel.With.Extensions.To.Mesh"
-type="Mesh"
+importer="MagicaVoxel.With.Extensions.To.MeshLibrary"
+type="MeshLibrary"
 uid="uid://cfybik5bahfx6"
-path="res://.godot/imported/chr_knight.vox-b49592b85187158c284fef6c7cdd5cf8.mesh"
+path="res://.godot/imported/chr_knight.vox-b49592b85187158c284fef6c7cdd5cf8.meshlib"
 
 [deps]
 
 source_file="res://chr_knight.vox"
-dest_files=["res://.godot/imported/chr_knight.vox-b49592b85187158c284fef6c7cdd5cf8.mesh"]
+dest_files=["res://.godot/imported/chr_knight.vox-b49592b85187158c284fef6c7cdd5cf8.meshlib"]
 
 [params]
 
 Scale=0.1
 GreedyMeshGenerator=true
 SnapToGround=false
-FirstKeyframeOnly=true
