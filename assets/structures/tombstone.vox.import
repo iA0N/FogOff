@@ -1,0 +1,17 @@
+[remap]
+
+importer="MagicaVoxel.With.Extensions.To.MeshLibrary"
+type="MeshLibrary"
+uid="uid://dc307g86e6rm5"
+path="res://.godot/imported/tombstone.vox-cf9677259fece43b14cee3e28b3745b7.meshlib"
+
+[deps]
+
+source_file="res://assets/structures/tombstone.vox"
+dest_files=["res://.godot/imported/tombstone.vox-cf9677259fece43b14cee3e28b3745b7.meshlib"]
+
+[params]
+
+Scale=0.1
+GreedyMeshGenerator=true
+SnapToGround=false

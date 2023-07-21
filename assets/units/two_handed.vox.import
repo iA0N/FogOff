@@ -1,0 +1,17 @@
+[remap]
+
+importer="MagicaVoxel.With.Extensions.To.MeshLibrary"
+type="MeshLibrary"
+uid="uid://bjl0xpgbv7mbt"
+path="res://.godot/imported/two_handed.vox-4754546bf21a89a40e3bb0d0f6fa918f.meshlib"
+
+[deps]
+
+source_file="res://assets/units/two_handed.vox"
+dest_files=["res://.godot/imported/two_handed.vox-4754546bf21a89a40e3bb0d0f6fa918f.meshlib"]
+
+[params]
+
+Scale=0.1
+GreedyMeshGenerator=true
+SnapToGround=false

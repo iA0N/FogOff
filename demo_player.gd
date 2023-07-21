@@ -5,6 +5,8 @@ extends CharacterBody3D
 # The downward acceleration when in the air, in meters per second squared.
 @export var fall_acceleration = 75
 
+var last_position = self.position
+
 
 var movement_speed: float = 4.0
 var movement_target_position: Vector3 = Vector3(50, 0, 50)
@@ -20,22 +22,28 @@ func _ready():
 	
 func _physics_process(delta):
 	if navigation_agent.is_navigation_finished():
+		$AnimationPlayer.stop()
 		return
 
 	var current_agent_position: Vector3 = global_position
 	var next_path_position: Vector3 = navigation_agent.get_next_path_position()
-
 	var new_velocity: Vector3 = next_path_position - current_agent_position
 	new_velocity = new_velocity.normalized()
 	new_velocity = new_velocity * movement_speed
 
+	$AnimationPlayer.play("jump")
+	
+	$Marker3D.position = $ChrKnight.position
+	$Marker3D.position.x += 0.01
+	
+	
 	velocity = new_velocity
 	move_and_slide()
 	return
-
 	
-	var direction = Vector3.ZERO
+	
 	var moving = false
+	var direction = Vector3.ZERO
 	speed = 6
 	if Input.is_action_pressed("D"):
 		direction.x += 1

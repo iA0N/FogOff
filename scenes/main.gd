@@ -8,7 +8,7 @@ func _ready():
 	generate_trees()
 
 func _input(event):
-	if event is InputEventMouseButton:
+	if event is InputEventMouseButton and Input.is_action_just_released("LBM"):
 		var space_state = get_world_3d().direct_space_state
 		var cam = $demo_player/Camera3D
 		var mousepos = get_viewport().get_mouse_position()
@@ -22,6 +22,21 @@ func _input(event):
 	
 		print(result)
 		$demo_player.set_movement_target(result.position)
+		$demo_player.get_node("ChrKnight").look_at(result.position)
+		$demo_player.get_node("ChrKnight").rotation_degrees.y += 180
+		
+	if Input.is_action_just_pressed("MWU"):
+		if ($demo_player/Camera3D.position.y < 40):
+			$demo_player/Camera3D.position.y += 0.2
+		
+	if Input.is_action_just_pressed("MWD"):
+		if ($demo_player/Camera3D.position.y > 4):
+			$demo_player/Camera3D.position.y -= 0.2
+			
+	$demo_player/Camera3D.look_at($demo_player.position)
+	$demo_player.get_node("ChrKnight").rotation_degrees.x = 0
+	$demo_player.get_node("ChrKnight").rotation_degrees.z = 0
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

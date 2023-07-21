@@ -1,0 +1,17 @@
+[remap]
+
+importer="MagicaVoxel.With.Extensions.To.MeshLibrary"
+type="MeshLibrary"
+uid="uid://j03tskigcko6"
+path="res://.godot/imported/cave_entrance.vox-a6fa0d1c3d902048eb6a0a98d072be1d.meshlib"
+
+[deps]
+
+source_file="res://assets/structures/cave_entrance.vox"
+dest_files=["res://.godot/imported/cave_entrance.vox-a6fa0d1c3d902048eb6a0a98d072be1d.meshlib"]
+
+[params]
+
+Scale=0.1
+GreedyMeshGenerator=true
+SnapToGround=false

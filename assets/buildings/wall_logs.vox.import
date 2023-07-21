@@ -1,0 +1,17 @@
+[remap]
+
+importer="MagicaVoxel.With.Extensions.To.MeshLibrary"
+type="MeshLibrary"
+uid="uid://kl656aqb4yg"
+path="res://.godot/imported/wall_logs.vox-af50a18aa6aba3ba1cb6e28192200977.meshlib"
+
+[deps]
+
+source_file="res://assets/buildings/wall_logs.vox"
+dest_files=["res://.godot/imported/wall_logs.vox-af50a18aa6aba3ba1cb6e28192200977.meshlib"]
+
+[params]
+
+Scale=0.1
+GreedyMeshGenerator=true
+SnapToGround=false
