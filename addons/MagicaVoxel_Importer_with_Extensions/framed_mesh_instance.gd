@@ -21,3 +21,6 @@ func set_current_frame(v):
 	if v >= 0 and v < mesh_count:
 		current_frame = v
 		self.mesh = frames.get_item_mesh(v)
+
+func get_mesh_count():
+	return mesh_count

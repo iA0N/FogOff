@@ -11,7 +11,7 @@ var last_position = self.position
 var movement_speed: float = 4.0
 var movement_target_position: Vector3 = Vector3(50, 0, 50)
 
-@onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
+@onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D2
 
 var target_velocity = Vector3.ZERO
 

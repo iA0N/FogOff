@@ -14,7 +14,6 @@ func _process(delta):
 	pass
 
 func generate():
-	
 	for l in length:
 		var tmp = []
 		tmp.resize(80)

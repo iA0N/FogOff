@@ -18,7 +18,7 @@ func generate():
 	for l in range(0, length):
 		for w in range (0, width):
 			var side = randi() % 10   
-			if side > 0: side = 2
-			else: side = 0
-			$GridMap.set_cell_item(Vector3(l,1,w), randi() % 2, side)
+			#if side > 0: side = 2
+			#else: side = 0
+			$GridMap.set_cell_item(Vector3(l,1,w), randi() % 2)
 			# TODO michi meint des is kacke und soll mehr als drei zeilen brauchen
