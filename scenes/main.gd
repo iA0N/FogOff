@@ -3,19 +3,38 @@ extends Node3D
 var better_lightning = true
 var iso = false
 @onready var env = $WorldEnvironment.environment
-
+@onready var chunk_scene = load("res://scenes/chunk.tscn")
 var tree_rids = []
+var done = false
+
+var thread1: Thread
+var thread2: Thread
+var chunks = []
+var mutex: Mutex
 
 func _ready():
-	for i in 10:
-		for j in 10:
-			var chunk_scene = load("res://scenes/chunk.tscn")
-			var chunk_instance = chunk_scene.instantiate()
-			add_child(chunk_instance)
-			chunk_instance.position = Vector3((8 + i * 16), 0, (8 + j * 16))
+	thread1 = Thread.new()
+	thread2 = Thread.new()
+	mutex = Mutex.new()
+	
+	thread1.start(_instantiateChunk.bind(0))
+	thread2.start(_instantiateChunk.bind(5))
+	
+	thread1.wait_to_finish()
+	thread2.wait_to_finish()
+	
+	for i in range (0, chunks.size()):
+		print("Adding chunkg: " + str(i))
+		add_child(chunks[i])
+		#if true:#chunks[i].position.distance_to($demo_player.position) < 40:
+			#chunks[i].visible = true
+			#chunks[i].get_node("NavigationRegion3D").enabled = true
+			#await get_tree().create_timer(2).timeout
 
-	var default_3d_map_rid: RID = get_world_3d().get_navigation_map()
-	NavigationServer3D.map_set_edge_connection_margin(default_3d_map_rid, 1.2)
+
+
+	#var default_3d_map_rid: RID = get_world_3d().get_navigation_map()
+	#NavigationServer3D.map_set_edge_connection_margin(default_3d_map_rid, 1.2)
 
 func _input(event):
 	if event is InputEventMouseButton and Input.is_action_just_released("LBM"):
@@ -49,49 +68,25 @@ func _input(event):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$Control/VBoxContainer/Label3.text = "FPS: " + str(Engine.get_frames_per_second())
-#	$demo_player/Camera3D/RayCast3D.target_position = $demo_player.position
-#	print($demo_player/Camera3D/RayCast3D.get_collider())
-#	if $demo_player/Camera3D/RayCast3D.get_collider() != null:
-#		$demo_player/Camera3D/RayCast3D.get_collider().visible = false
-
-	
-	#var query = PhysicsRayQueryParameters3D.create($demo_player/Camera3D.project, $demo_player.position)
-	#query.collide_with_areas = true
-	#query.collision_mask = 0b10000000_00000000_00000000_00001000
-	#var collision = get_world_3d().direct_space_state.intersect_ray(query)
-	#if (collision):
-#		collision.get("collider").get_parent().visible = false
-
-#	if Input.is_action_just_released("T"):
-#		if better_lightning == true:
-#			better_lightning = !better_lightning
-#			$WorldEnvironment.environment.set_ssil_enabled(better_lightning)
-#			#$WorldEnvironment.environment.set_sdfgi_enabled(better_lightning)
-#			$Control/VBoxContainer/Label4.text = "Toggle SSIL: T (OFF)"
-#		else:
-#			better_lightning = !better_lightning
-#			$WorldEnvironment.environment.set_ssil_enabled(better_lightning)
-#			#$WorldEnvironment.environment.set_sdfgi_enabled(better_lightning)
-#			$Control/VBoxContainer/Label4.text = "Toggle SSIL: T (ON)"
-#
-#	if Input.is_action_just_released("Q"):
-#		if !iso:
-#			$demo_player/Camera3D.current = false
-#			$demo_player/Camera3D_ISO.current = true
-#			iso = !iso
-#		else:
-#			$demo_player/Camera3D.current = true
-#			$demo_player/Camera3D_ISO.current = false
-#			iso = !iso
 
 
-func _on_area_3d_area_entered(area):
-	print("entered")
-	area.get_parent().set_transparency(0.8)
-	#area.get_parent().get_node("AnimationPlayer").play("fadeOut");
+func _instantiateChunk(start):
+	print("started from " + str(start))
+	for i in range(start, start+5):
+		for j in 10:
+			mutex.lock()
+			var chunk_instance = chunk_scene.instantiate()
+			chunk_instance.position = Vector3((8 + i * 16), 0, (8 + j * 16))
+			chunks.append(chunk_instance)
+			if chunks.size() % 10 == 0:
+				print("Status: " + str(chunks.size()) + " / 10000") 
+			mutex.unlock()
+				
 
 
-func _on_area_3d_area_exited(area):
-	print("exited")
-	area.get_parent().set_transparency(0)
-	#area.get_parent().get_node("AnimationPlayer").play("fadeIn");
+func _on_area_3d_body_entered(body):
+	body.get_node("FramedMeshInstance").set_transparency(0.8)
+
+
+func _on_area_3d_body_exited(body):
+	body.get_node("FramedMeshInstance").set_transparency(0)

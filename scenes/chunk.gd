@@ -3,53 +3,74 @@ extends Node3D
 func _ready():
 	randomize()
 	$FloraGenerator.generate()
-	var chance_to_be_special = randi() % 14
-	if chance_to_be_special > 0:
-		generateTrees()
-	else:
-		$Graveyard.visible = true
-		
-	await get_tree().physics_frame
-	await get_tree().physics_frame
-	await get_tree().physics_frame
-	$NavigationRegion3D.bake_navigation_mesh()
+	generateEnvironment()
 	
 func _process(delta):
 	pass
 
-func generateTrees():
-	var tree = preload("res://scenes/tree.tscn")
+func generateEnvironment():
+	
 	var length: int = 16
 	var width:  int = 16
 	
-	var taken_positions = []
+	var miscEnvScenes = [
+		preload("res://scenes/oldLog.tscn"),
+		preload("res://scenes/logStump.tscn"),
+		preload("res://scenes/stone.tscn")
+	]
 	
-	for i in randi() % 8:
-		var pos = Vector3((randi() % 11) + 3, 2, (randi() % 11) + 3)
-		var iterations = 0
-		while iterations < 1000:
-			var is_valid_pos = true
-			for taken_position in taken_positions:
-				if pos.distance_to(taken_position) < 4:
-					is_valid_pos = false
-					break
-			if is_valid_pos: break
-			pos = Vector3((randi() % 11) + 3, 2, (randi() % 11) + 3)
-			iterations += 1
-		if iterations < 1000:
-			var tree_instance = tree.instantiate()
-			tree_instance.current_frame = randi() % 5
-			tree_instance.rotation_degrees.y = randi() % 360
-			$NavigationRegion3D/Trees.add_child(tree_instance)
-			tree_instance.position = Vector3(pos)
-			taken_positions.append(pos)
-			self.get_parent().tree_rids.append(tree_instance.get_node("TreeArea").get_rid())
+	var treeScenes = [
+		preload("res://scenes/tree.tscn")
+	]
+	
+	for i in 2: await spawnEnvironmentInstance(miscEnvScenes)
+	for i in 6: await spawnEnvironmentInstance(treeScenes)
+	
+	remove_child($Area3D)
+	
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+	
+	$NavigationRegion3D.bake_navigation_mesh()
+	
+func setTestingArea(instance: Node3D):
+	$Area3D.position = instance.global_position
+	$Area3D.position.y += 1
+	$Area3D/CollisionShape3D.shape = instance.get_node("CollisionShape3D").shape
+	$Area3D/CollisionShape3D.global_transform = instance.get_node("CollisionShape3D").global_transform
+	
+func spawnEnvironmentInstance(meshes):
+	var selection_index = randi() % meshes.size()
+	var pos = Vector3((randi() % 11) + 3, 0, (randi() % 11) + 3)
+	var selected_scene = meshes[selection_index]
+	var new_instance = selected_scene.instantiate()
+	$NavigationRegion3D/Environment.add_child(new_instance)
+
+	var found_position = false
+	var counter = 0
+	while not found_position:
+		new_instance.position = pos
+		new_instance.rotation_degrees.y = randi() % 360
+		setTestingArea(new_instance)
+		await get_tree().physics_frame
+		await get_tree().physics_frame
+		await get_tree().physics_frame
+		if ($Area3D.get_overlapping_bodies().size() == 1):
+			found_position = true
+		pos = Vector3((randi() % 11) + 3, 0, (randi() % 11) + 3)
+		counter+=1
+		if counter == 10:
+			self.remove_child(new_instance)
+			found_position = true
+		else:
+			self.get_parent().tree_rids.append(new_instance.get_rid())
 	
 func regenerateTrees():
 	while true:
-		generateTrees()
+		generateEnvironment()
 		$NavigationRegion3D.bake_navigation_mesh();
 		await get_tree().create_timer(2.0).timeout
-		for n in $NavigationRegion3D/Trees.get_children():
-			$NavigationRegion3D/Trees.remove_child(n)
+		for n in $NavigationRegion3D/Environment.get_children():
+			$NavigationRegion3D/Environment.remove_child(n)
 			n.queue_free()
