@@ -14,14 +14,14 @@ func generateEnvironment():
 	var width:  int = 16
 	
 	var miscEnvScenes = [
-		preload("res://scenes/oldLog.tscn"),
-		preload("res://scenes/logStump.tscn"),
-		preload("res://scenes/stone.tscn"),
-		preload("res://scenes/bush.tscn")
+		preload("res://scenes/environment/bush.tscn"),
+		preload("res://scenes/environment/logStump.tscn"),
+		preload("res://scenes/environment/stone.tscn"),
+		preload("res://scenes/environment/bush.tscn")
 	]
 	
 	var treeScenes = [
-		preload("res://scenes/tree.tscn")
+		preload("res://scenes/environment/tree.tscn")
 	]
 	
 	for i in 2: await spawnEnvironmentInstance(miscEnvScenes)
