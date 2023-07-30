@@ -1,4 +1,29 @@
-[gd_scene format=3 uid="uid://8k0e70vaoo5s"]
+[gd_scene load_steps=3 format=3 uid="uid://8k0e70vaoo5s"]
+
+[sub_resource type="FontFile" id="FontFile_ofvip"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/60/0/ascent = 0.0
+cache/0/60/0/descent = 0.0
+cache/0/60/0/underline_position = 0.0
+cache/0/60/0/underline_thickness = 0.0
+cache/0/60/0/scale = 1.0
+cache/0/60/0/kerning_overrides/60/0 = Vector2(0, 0)
+cache/0/60/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/60/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0q0pe"]
+font = SubResource("FontFile_ofvip")
+font_size = 60
+font_color = Color(0, 0, 0, 1)
+outline_size = 4
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -29,3 +54,19 @@ text = "FPS: "
 [node name="Label4" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 text = "Toggle SSIL: T (ON)"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 3537.0
+offset_bottom = 2144.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 742.0
+offset_top = 500.0
+offset_right = 1177.0
+offset_bottom = 563.0
+text = "Generating World"
+label_settings = SubResource("LabelSettings_0q0pe")

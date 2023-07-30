@@ -10,6 +10,7 @@ func generate():
 		if i == 1: continue
 		$FloraMeshes.set_current_frame(i)
 		meshes.append($FloraMeshes.mesh)
+	
 	assert(instance_count * meshes.size() <= 400)
 	
 	for mesh in meshes:
