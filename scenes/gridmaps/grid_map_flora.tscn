@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cee45vh1fo6vb"]
+
+[ext_resource type="Script" path="res://scenes/gridmaps/grid_map_flora.gd" id="1_2mlot"]
+
+[node name="GridMap_Flora" type="Node3D"]
+script = ExtResource("1_2mlot")
+
+[node name="GridMap" type="GridMap" parent="."]
+cell_size = Vector3(1.6, 0.45, 1.6)

@@ -13,6 +13,8 @@ var chunks = []
 var mutex: Mutex
 
 var init_done = false
+@onready var tower_scene = load("res://scenes/buildings/tower.tscn")
+var tower_instance
 
 func _ready():
 	thread1 = Thread.new()
@@ -24,8 +26,12 @@ func _ready():
 	#thread1.wait_to_finish()
 	#thread2.wait_to_finish()
 	
-	for i in 10:
-		for j in 10:
+	tower_instance = tower_scene.instantiate()
+	add_child(tower_instance)
+	
+	
+	for i in 5:
+		for j in 5:
 			var chunk_instance = chunk_scene.instantiate()
 			chunk_instance.position = Vector3((8 + i * 16), 0, (8 + j * 16))
 			chunks.append(chunk_instance)
@@ -62,7 +68,7 @@ func _ready():
 	init_done = true
 	#var default_3d_map_rid: RID = get_world_3d().get_navigation_map()
 	#NavigationServer3D.map_set_edge_connection_margin(default_3d_map_rid, 1.2)
-
+	
 var LMB_pressed = false
 
 func _input(event):
@@ -73,19 +79,26 @@ func _input(event):
 		if event is InputEventMouseButton and Input.is_action_just_released("LBM"):
 			LMB_pressed = false
 			
-		if LMB_pressed:
-			var space_state = get_world_3d().direct_space_state
-			var cam = $demo_player/Camera3D
-			var mousepos = get_viewport().get_mouse_position()
+		
+		var space_state = get_world_3d().direct_space_state
+		var cam = $demo_player/Camera3D
+		var mousepos = get_viewport().get_mouse_position()
 
-			var origin = cam.project_ray_origin(mousepos)
-			var end = origin + cam.project_ray_normal(mousepos) * 200
-			var query = PhysicsRayQueryParameters3D.create(origin, end)
-			query.collide_with_areas = true
-			query.set_exclude(tree_rids)
-			var result = space_state.intersect_ray(query)
+		var origin = cam.project_ray_origin(mousepos)
+		var end = origin + cam.project_ray_normal(mousepos) * 200
+		var query = PhysicsRayQueryParameters3D.create(origin, end)
+		query.collide_with_areas = true
+		query.set_exclude(tree_rids)
+		var result = space_state.intersect_ray(query)
+		if LMB_pressed:
 			$demo_player.set_movement_target(result.position)
 			print("Main | Clicked to move at: " + str(result))
+			if tower_instance.placeable:
+				tower_instance = tower_scene.instantiate()
+				add_child(tower_instance)
+		tower_instance.position = result.position
+		tower_instance.position.y = 0
+			
 		if Input.is_action_just_pressed("MWU"):
 			if ($demo_player/Camera3D.position.y < 40):
 				$demo_player/Camera3D.position.y += 0.2
@@ -95,8 +108,7 @@ func _input(event):
 				$demo_player/Camera3D.position.y -= 0.2
 				
 		$demo_player/Camera3D.look_at($demo_player.position)
-		$demo_player.get_node("ChrKnight").rotation_degrees.x = 0
-		$demo_player.get_node("ChrKnight").rotation_degrees.z = 0
+		
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
