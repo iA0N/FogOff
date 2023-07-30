@@ -1,5 +1,5 @@
 extends Node3D
-
+var init_done = false
 func _ready():
 	randomize()
 	$FloraGenerator.generate()
@@ -16,7 +16,8 @@ func generateEnvironment():
 	var miscEnvScenes = [
 		preload("res://scenes/oldLog.tscn"),
 		preload("res://scenes/logStump.tscn"),
-		preload("res://scenes/stone.tscn")
+		preload("res://scenes/stone.tscn"),
+		preload("res://scenes/bush.tscn")
 	]
 	
 	var treeScenes = [
@@ -33,6 +34,7 @@ func generateEnvironment():
 	await get_tree().physics_frame
 	
 	$NavigationRegion3D.bake_navigation_mesh()
+	init_done = true
 	
 func setTestingArea(instance: Node3D):
 	$Area3D.position = instance.global_position

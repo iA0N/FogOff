@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://7mml3hexehkq"]
-
-[node name="bush" type="Node3D"]
-
-[node name="Bushes" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 0)
