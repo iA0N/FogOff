@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://7c7lwanma275"]
+[gd_scene load_steps=7 format=3 uid="uid://7c7lwanma275"]
 
 [ext_resource type="Script" path="res://addons/MagicaVoxel_Importer_with_Extensions/framed_mesh_instance.gd" id="1_bnf6s"]
 [ext_resource type="MeshLibrary" uid="uid://dc307g86e6rm5" path="res://assets/structures/tombstone.vox" id="2_lmapp"]
+[ext_resource type="PackedScene" uid="uid://dkkhuvvbifkaw" path="res://scenes/units/skeleton.tscn" id="3_6236g"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sq3q4"]
 vertex_color_use_as_albedo = true
@@ -31,3 +32,6 @@ frames = ExtResource("2_lmapp")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.45058e-09, 1, 0.1)
 shape = SubResource("BoxShape3D_3mr6y")
+
+[node name="Skeleton" parent="." instance=ExtResource("3_6236g")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)

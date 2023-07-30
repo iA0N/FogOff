@@ -1,9 +1,8 @@
 extends Node3D
 
-var better_lightning = true
-var iso = false
 @onready var env = $WorldEnvironment.environment
 @onready var chunk_scene = load("res://scenes/chunk.tscn")
+@onready var player
 var tree_rids = []
 var done = false
 
@@ -61,10 +60,7 @@ func _ready():
 	$Control.get_node("ColorRect").visible = false
 	$Control.get_node("Label").visible = false
 	
-	var player_scene = load("res://scenes/demo_player.tscn")
-	var player_instance = player_scene.instantiate()
-	add_child(player_instance)
-	player_instance.position = Vector3(50,1,50)
+	instantiatePlayer()
 	init_done = true
 	#var default_3d_map_rid: RID = get_world_3d().get_navigation_map()
 	#NavigationServer3D.map_set_edge_connection_margin(default_3d_map_rid, 1.2)
@@ -128,3 +124,8 @@ func _instantiateChunks(start):
 				print("Status: " + str(chunks.size()) + " / 10000") 
 			mutex.unlock()
 				
+func instantiatePlayer():
+	var player_scene = load("res://scenes/demo_player.tscn")
+	player = player_scene.instantiate()
+	add_child(player)
+	player.position = Vector3(50,1,50)
