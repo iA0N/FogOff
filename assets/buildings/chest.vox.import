@@ -1,0 +1,17 @@
+[remap]
+
+importer="MagicaVoxel.With.Extensions.To.MeshLibrary"
+type="MeshLibrary"
+uid="uid://bdu0qg265akp2"
+path="res://.godot/imported/chest.vox-0e2900a001fd5f02d9aedb3f9c024cb7.meshlib"
+
+[deps]
+
+source_file="res://assets/buildings/chest.vox"
+dest_files=["res://.godot/imported/chest.vox-0e2900a001fd5f02d9aedb3f9c024cb7.meshlib"]
+
+[params]
+
+Scale=0.1
+GreedyMeshGenerator=true
+SnapToGround=false

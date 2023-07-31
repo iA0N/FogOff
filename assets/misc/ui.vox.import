@@ -1,0 +1,17 @@
+[remap]
+
+importer="MagicaVoxel.With.Extensions.To.MeshLibrary"
+type="MeshLibrary"
+uid="uid://cligr028vxbdu"
+path="res://.godot/imported/ui.vox-fb42843924b7f1b3f9845e5e00f9dab5.meshlib"
+
+[deps]
+
+source_file="res://assets/misc/ui.vox"
+dest_files=["res://.godot/imported/ui.vox-fb42843924b7f1b3f9845e5e00f9dab5.meshlib"]
+
+[params]
+
+Scale=0.1
+GreedyMeshGenerator=true
+SnapToGround=false

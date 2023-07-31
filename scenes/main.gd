@@ -13,7 +13,6 @@ var mutex: Mutex
 
 var init_done = false
 @onready var tower_scene = load("res://scenes/buildings/tower.tscn")
-var tower_instance
 
 func _ready():
 	thread1 = Thread.new()
@@ -24,10 +23,6 @@ func _ready():
 	#thread2.start(_instantiateChunks.bind(5))
 	#thread1.wait_to_finish()
 	#thread2.wait_to_finish()
-	
-	tower_instance = tower_scene.instantiate()
-	add_child(tower_instance)
-	
 	
 	for i in 5:
 		for j in 5:
@@ -89,11 +84,6 @@ func _input(event):
 		if LMB_pressed:
 			$demo_player.set_movement_target(result.position)
 			print("Main | Clicked to move at: " + str(result))
-			if tower_instance.placeable:
-				tower_instance = tower_scene.instantiate()
-				add_child(tower_instance)
-		tower_instance.position = result.position
-		tower_instance.position.y = 0
 			
 		if Input.is_action_just_pressed("MWU"):
 			if ($demo_player/Camera3D.position.y < 40):

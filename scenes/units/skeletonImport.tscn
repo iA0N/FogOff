@@ -16,47 +16,47 @@ bones/11/rotation = Quaternion(-0.0166917, -0.0166918, 0.703487, 0.710316)
 bones/12/rotation = Quaternion(0.0236056, 1.05525e-07, 0.00482834, 0.99971)
 
 [node name="axe" parent="Armature/Skeleton3D" index="0"]
-transform = Transform3D(-0.605063, 0.710199, -0.359884, 0.615309, 0.703968, 0.354717, 0.505267, -0.00681372, -0.862936, -0.443362, -0.613963, 0.424206)
+transform = Transform3D(-0.992445, -0.0116565, 0.122141, 0.119452, -0.31919, 0.940132, 0.0280276, 0.947619, 0.318171, -0.164258, 1.00261, -0.391458)
 bone_idx = 15
 
 [node name="axe" parent="Armature/Skeleton3D/axe" index="0"]
 visible = false
 
 [node name="hammer" parent="Armature/Skeleton3D" index="1"]
-transform = Transform3D(-0.605063, 0.710199, -0.359884, 0.615309, 0.703968, 0.354717, 0.505267, -0.00681372, -0.862936, -0.443362, -0.613963, 0.424206)
+transform = Transform3D(-0.992445, -0.0116565, 0.122141, 0.119452, -0.31919, 0.940132, 0.0280276, 0.947619, 0.318171, -0.164258, 1.00261, -0.391458)
 bone_idx = 16
 
 [node name="hammer" parent="Armature/Skeleton3D/hammer" index="0"]
 visible = false
 
 [node name="mace" parent="Armature/Skeleton3D" index="2"]
-transform = Transform3D(-0.605063, 0.710199, -0.359884, 0.615309, 0.703968, 0.354717, 0.505267, -0.00681372, -0.862936, -0.443362, -0.613963, 0.424206)
+transform = Transform3D(-0.992445, -0.0116565, 0.122141, 0.119452, -0.31919, 0.940132, 0.0280276, 0.947619, 0.318171, -0.164258, 1.00261, -0.391458)
 bone_idx = 17
 
 [node name="mace" parent="Armature/Skeleton3D/mace" index="0"]
 visible = false
 
 [node name="pickaxe" parent="Armature/Skeleton3D" index="3"]
-transform = Transform3D(-0.605063, 0.710199, -0.359884, 0.615309, 0.703968, 0.354717, 0.505267, -0.00681372, -0.862936, -0.443362, -0.613963, 0.424206)
+transform = Transform3D(-0.992445, -0.0116565, 0.122141, 0.119452, -0.31919, 0.940132, 0.0280276, 0.947619, 0.318171, -0.164258, 1.00261, -0.391458)
 bone_idx = 18
 
 [node name="pickaxe" parent="Armature/Skeleton3D/pickaxe" index="0"]
 visible = false
 
 [node name="scythe" parent="Armature/Skeleton3D" index="4"]
-transform = Transform3D(-0.948931, 0.0771305, -0.30591, -0.0277205, 0.945518, 0.324387, 0.314264, 0.316301, -0.895093, -0.256386, 0.608907, 0.884056)
+transform = Transform3D(-0.694988, -0.693818, 0.188701, 0.3644, -0.113634, 0.924283, -0.619842, 0.711129, 0.331802, -1.04458, 0.762043, 0.561954)
 bone_idx = 19
 
 [node name="scythe" parent="Armature/Skeleton3D/scythe" index="0"]
 visible = false
 
 [node name="shield" parent="Armature/Skeleton3D" index="5"]
-transform = Transform3D(0.719724, 0.5976, -0.353372, 0.694196, -0.612498, 0.378073, 0.00949706, -0.517417, -0.85568, -0.692012, 0.164096, 0.65887)
+transform = Transform3D(-0.0107072, 0.994108, 0.107866, -0.339254, -0.105086, 0.934807, 0.940634, -0.026585, 0.338381, -0.890773, 1.12719, 0.0315368)
 bone_idx = 20
 
 [node name="shield" parent="Armature/Skeleton3D/shield" index="0"]
 visible = false
 
 [node name="sword" parent="Armature/Skeleton3D" index="6"]
-transform = Transform3D(-0.605063, 0.710199, -0.359884, 0.615309, 0.703968, 0.354717, 0.505267, -0.00681372, -0.862936, -0.392836, -0.566334, 0.430903)
+transform = Transform3D(-0.992445, -0.0116565, 0.122141, 0.119452, -0.31919, 0.940132, 0.0280276, 0.947619, 0.318171, -0.168033, 0.974074, -0.327913)
 bone_idx = 21
